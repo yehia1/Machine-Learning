@@ -6,6 +6,7 @@ file = pd.read_csv("50_Startups.csv")
 x = file.iloc[:,:-1].values
 y = file.iloc[:,-1].values
 
+#for categorical data
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
 ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [3])], remainder='passthrough')
