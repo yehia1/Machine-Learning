@@ -20,13 +20,13 @@ x_test = sc.transform(x_test)
 
 #making the logistic regression model
 from sklearn.ensemble import RandomForestClassifier
-classifier = RandomForestClassifier(n_estimators=10, criterion = 'entropy')
+classifier = RandomForestClassifier(n_estimators=10, criterion = 'entropy' ,random_state = 0 )
 classifier.fit(x_train,y_train)
 y_predict = classifier.predict(x_test)
 
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test,y_predict)
-
+accuracy = (int(cm[0,0])+int(cm[1,1]))/len(y_predict)
 
 #visualising the Training set results
 from matplotlib.colors import ListedColormap
