@@ -18,7 +18,7 @@ x_train = sc.fit_transform(x_train)
 x_test = sc.transform(x_test)
 
 
-#making the KNN model
+#making the svm model
 from sklearn.svm import SVC
 classifier = SVC(kernel = 'linear')
 classifier.fit(x_train,y_train)
